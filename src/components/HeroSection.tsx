@@ -2,11 +2,24 @@ import { motion } from "framer-motion";
 import { Hero3D } from "./Hero3D";
 import { Button } from "./ui/button";
 import { ArrowDown } from "lucide-react";
+import { useTypewriter } from "@/hooks/useTypewriter";
 
 export function HeroSection() {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const { displayedText: categoryText } = useTypewriter(
+    "Civil Engineering × Technology",
+    80,
+    500
+  );
+  
+  const { displayedText: quoteText } = useTypewriter(
+    "Building structures & exploring technology—one idea at a time.",
+    40,
+    2000
+  );
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -50,7 +63,8 @@ export function HeroSection() {
               className="inline-block"
             >
               <span className="text-sm font-display uppercase tracking-widest text-primary animate-glow">
-                Civil Engineering × Technology
+                {categoryText}
+                <span className="animate-pulse">|</span>
               </span>
             </motion.div>
 
@@ -78,7 +92,8 @@ export function HeroSection() {
               transition={{ delay: 0.5 }}
               className="text-lg text-foreground/80 max-w-xl"
             >
-              "Building structures & exploring technology—one idea at a time."
+              "{quoteText}"
+              <span className="animate-pulse ml-1">|</span>
             </motion.p>
 
             <motion.div
