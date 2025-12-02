@@ -3,10 +3,12 @@ import { AboutSection } from "@/components/AboutSection";
 import { SkillsSection } from "@/components/SkillsSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { ContactSection } from "@/components/ContactSection";
+import { Navbar } from "@/components/Navbar";
 
 const Index = () => {
   return (
     <div className="relative">
+      <Navbar />
       <HeroSection />
       <AboutSection />
       <SkillsSection />
